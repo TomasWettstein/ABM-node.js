@@ -10,3 +10,6 @@ npminstall express mysql express-myconnection morgan ejs
 npm install nodemon -g
 
 La carpeta views es la carpeta que va a almacenar todos los archivos del motor de plantillas
+La carpeta routes es donde van a ir todas las rutas de nuestro servidor de express
+La carpeta controllers es donde van a ir los controladores
+La carpeta public es donde van a estar las imagenes, librerias, archivos css, codigo de javascript del front-end
