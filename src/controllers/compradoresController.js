@@ -15,5 +15,15 @@ controller.list = (req, res) => {
     });
 };
 
+controller.add = (req, res) => {
+    const datos = req.body;
+    req.getConnection((err, conn) => {
+        conn.query(`INSERT INTO compradores SET ?`, [datos], (err, comprador) => {
+            console.log(comprador)
+            res.redirect('/');
+        })
+    })
+}
+
 //Exportamos el controlador
 module.exports = controller;

@@ -1,0 +1,27 @@
+nav{
+    height: 48px;
+    background-color: rgb(58,47,47);
+}
+nav div a{
+    margin-top: -1em;
+    font-size: 1em;
+    font-weight: bold;
+}
+form{
+    margin-left: 1.5;
+    background-color: rgb(85,81,81);
+    height: 20em;
+    margin-top: 1.5em;
+    border-radius: 3px;
+}
+label{
+    font-size: 18px;
+    color: white;
+}
+input{
+    height: 30px;
+}
+tr{
+   border-bottom: 1px solid black;
+
+}

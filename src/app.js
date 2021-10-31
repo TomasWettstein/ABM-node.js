@@ -6,7 +6,7 @@ const path = require('path');
 const morgan = require('morgan');
 //Requiero modulo mysql
 const mysql = require('mysql');
-//Dentro de esta constate myconnection tengo la funcionalidad de este modulo
+//Dentro de esta constante myconnection tengo la funcionalidad de este modulo
 const myconnection = require('express-myconnection');
 
 
@@ -15,6 +15,7 @@ const app = express();
 
 //Importando rutas, de este manera tenemos todas las rutas del archivo compradores de la carpeta routes almacenadas en una variable.
 const compradoresRutas = require('./routes/compradores');
+const { urlencoded } = require('express');
 
 //Configurar servidor, verifica si hay  un puerto en el SO o que escuche el 3000
 app.set('port', process.env.PORT || 3000);
@@ -39,11 +40,15 @@ app.use(myconnection(mysql,{
 
 }, 'single'));
 
+//Desde el modulo de express, estamos requiriendo un metodo que nos va a permitir entender todos los datos que vengna desde el forulario, y ponemos extends false por que no vamos a enviar imagenes ni datos complicados
+app.use(express.urlencoded({extended: false}));
+
 //Routes, cada vez que un usuario valla a la ruta principal de nuestro servidor vamos a utilizar
 app.use('/', compradoresRutas);
 
 //Archivos estaticos
-app.use(express.static(path.join(__dirname, 'pubic')));
+app.use(express.static(__dirname + '/public'));
+
 
 //Inicializamos el servidor
 app.listen(app.get('port'), () => {
