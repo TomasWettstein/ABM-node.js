@@ -19,11 +19,26 @@ controller.add = (req, res) => {
     const datos = req.body;
     req.getConnection((err, conn) => {
         conn.query(`INSERT INTO compradores SET ?`, [datos], (err, comprador) => {
+            if(err){
+                res.json(err);
+            }
             console.log(comprador)
             res.redirect('/');
         })
     })
 }
+controller.delete = (req, res) => {
+    const id = req.params.id;
+    req.getConnection((err, conn) => {
+        conn.query(`DELETE FROM compradores WHERE id = ?`, [id], (err, eliminado) => {
+            if(err){
+                res.json(err);
+            }
+            res.redirect('/');
+        })
+    })
+}
+
 
 //Exportamos el controlador
 module.exports = controller;

@@ -16,15 +16,15 @@
                 </thead>
                 <tbody>
                     <% if(data){ %>
-                        <% for (const prop in data) { %>
+                        <% for (let i = 0; i < data.length; i++) { %>
                             <tr class="fila" >
-                                <td scope="row"><%= data[prop].id %></td>
-                                <td><%= data[prop].nombre %></td>
-                                <td><%= data[prop].direccion %></td>
-                                <td><%= data[prop].telefono %></td>
+                                <td scope="row"><%= (i + 1) %></td>
+                                <td><%= data[i].nombre %></td>
+                                <td><%= data[i].direccion %></td>
+                                <td><%= data[i].telefono %></td>
                                 <td>
-                                    <button class="btn btn-success rounded-pill">Editar</button>
-                                    <button class="btn btn-danger rounded-pill">Eliminar</button>
+                                    <a  class="btn btn-success rounded-pill">Editar</a>
+                                    <a href="/delete/<%= data[i].id %>"class="btn btn-danger rounded-pill">Eliminar</a>
                                 </td>
                             </tr>
                         
