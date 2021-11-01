@@ -1,9 +1,7 @@
 <%- include('partials/header'); -%>
     <div class="contenido col-12 row">
-        <div class="position-relative mt-5 col-12">
-            <h1 class="position-absolute top-50 start-50 translate-middle">CRUD</h1>
-        </div>
         <div class="tabla col-8 row mt-4 bg-light">
+            <% if(data != ""){ %>
             <table class="table">
                 <thead>
                     <tr>
@@ -15,7 +13,6 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <% if(data){ %>
                         <% for (let i = 0; i < data.length; i++) { %>
                             <tr class="fila" >
                                 <td scope="row"><%= (i + 1) %></td>
@@ -23,15 +20,21 @@
                                 <td><%= data[i].direccion %></td>
                                 <td><%= data[i].telefono %></td>
                                 <td>
-                                    <a  class="btn btn-success rounded-pill">Editar</a>
+                                    <button class="btn btn-success rounded-pill botonInfo" data-nombre="<%= data[i].nombre %>" data-direccion = "<%= data[i].direccion %>" data-telefono = "<%= data[i].telefono %>" data-bs-toggle="modal" data-bs-target="#exampleModal">Editar</button>
                                     <a href="/delete/<%= data[i].id %>"class="btn btn-danger rounded-pill">Eliminar</a>
                                 </td>
                             </tr>
                         
                         <% } %>
-                    <% } -%>
                 </tbody>
             </table>
+            <% } else{ %>  
+                <div class="position-relative">
+                    <h3 class="position-absolute top-50 start-50 translate-middle">No hay datos registrados</h3>
+                </div>
+                        
+          
+               <% } %>
         </div>
         <div class="col-4 formulario">
             <form action="/add" method="post" class="card-body">
@@ -54,8 +57,6 @@
 
         </div>
     </div>
-
-
     </div>
 
     <%- include('partials/footer'); -%>

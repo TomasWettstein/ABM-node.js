@@ -4,10 +4,10 @@ const controller = {};
 controller.list = (req, res) => {
     req.getConnection((err, conn) => {
         conn.query('SELECT * FROM compradores', (err, rows) => {
+            console.log(rows)
             if(err){
                 res.json(err);
             }
-            console.log(rows);
             res.render('compradores',{
                 data: rows
             })
