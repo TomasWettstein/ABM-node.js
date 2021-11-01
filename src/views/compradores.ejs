@@ -1,6 +1,6 @@
 <%- include('partials/header'); -%>
     <div class="contenido col-12 row">
-        <div class="tabla col-8 row mt-4 bg-light">
+        <div class="tabla col-12 table-responsive col-md-8 row mt-4 bg-light">
             <% if(data != ""){ %>
             <table class="table">
                 <thead>
@@ -29,14 +29,14 @@
                 </tbody>
             </table>
             <% } else{ %>  
-                <div class="position-relative">
-                    <h3 class="position-absolute top-50 start-50 translate-middle">No hay datos registrados</h3>
+                <div class="position-relative mt-4 mb-3 text-center">
+                    <h4 class="position-absolute top-50 start-50 translate-middle">No hay datos registrados</h4>
                 </div>
                         
           
                <% } %>
         </div>
-        <div class="col-4 formulario">
+        <div class="col-12 col-md-4 formulario">
             <form action="/add" method="post" class="card-body">
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Nombre</label>
