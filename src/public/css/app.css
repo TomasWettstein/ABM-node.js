@@ -10,7 +10,7 @@ nav div a{
 form{
     margin-left: 1.5;
     background-color: rgb(85,81,81);
-    height: 20em;
+    height: auto;
     margin-top: 1.5em;
     border-radius: 3px;
 }

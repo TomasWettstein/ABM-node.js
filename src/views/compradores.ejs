@@ -20,7 +20,7 @@
                                 <td><%= data[i].direccion %></td>
                                 <td><%= data[i].telefono %></td>
                                 <td>
-                                    <button class="btn btn-success rounded-pill botonInfo" data-nombre="<%= data[i].nombre %>" data-direccion = "<%= data[i].direccion %>" data-telefono = "<%= data[i].telefono %>" data-bs-toggle="modal" data-bs-target="#exampleModal">Editar</button>
+                                    <button class="btn btn-success rounded-pill botonInfo" id="botonEditar" data-nombre="<%= data[i].nombre %>" data-direccion = "<%= data[i].direccion %>" data-telefono = "<%= data[i].telefono %>" data-bs-toggle="modal" data-bs-target="#exampleModal">Editar</button>
                                     <a href="/delete/<%= data[i].id %>"class="btn btn-danger rounded-pill">Eliminar</a>
                                 </td>
                             </tr>
@@ -37,21 +37,24 @@
                <% } %>
         </div>
         <div class="col-12 col-md-4 formulario">
-            <form action="/add" method="post" class="card-body">
+            <form action="/add" id="formulario" method="post" class="card-body">
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Nombre</label>
-                    <input type="text" name="nombre" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <input type="text" id="nombre" name="nombre" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingresar nombre">
+                    <p id="errNombre" class="text-danger"></p>
                 </div>
                 <div class="mb-3">
-                    <label for="exampleInputPassword1" class="form-label">Direccion</label>
-                    <input type="text" name="Direccion" class="form-control" id="exampleInputPassword1">
+                    <label for="exampleInputPassword1" class="form-label">Dirección</label>
+                    <input type="text" id="direccion" name="Direccion" class="form-control" id="exampleInputPassword1" placeholder="Ingresar Dirección">
+                    <p id="errDireccion" class="text-danger"></p>
                 </div>
                 <div class="mb-3">
-                    <label class="form-check-label" for="exampleCheck1">Telefono</label>
-                    <input type="text" name="Telefono" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <label class="form-check-label" for="exampleCheck1">Teléfono</label>
+                    <input type="text" id="telefono" name="Telefono" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingresar teléfono">
+                    <p id="errTelefono" class="text-danger"></p>
                 </div>
-                <div class="position-relative mt-5 col-12">
-                    <button type="submit" class="btn btn-dark rounded-pill position-absolute top-50 start-50 translate-middle">Agregar</button>
+                <div class="col-12 text-center">
+                    <button id="boton" class="btn btn-dark rounded-pill">Agregar</button>
                 </div>
             </form>
 
