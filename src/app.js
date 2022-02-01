@@ -14,7 +14,7 @@ const myconnection = require('express-myconnection');
 const app = express();
 
 //Importando rutas, de este manera tenemos todas las rutas del archivo compradores de la carpeta routes almacenadas en una variable.
-const compradoresRutas = require('./routes/compradores');
+const compradoresRutas = require('./routes/index');
 const { urlencoded } = require('express');
 
 //Configurar servidor, verifica si hay  un puerto en el SO o que escuche el 3000

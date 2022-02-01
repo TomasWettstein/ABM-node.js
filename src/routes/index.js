@@ -5,7 +5,11 @@ const router = express.Router();
 const compradoresController = require('../controllers/compradoresController');
 
 //Le pasamos a la ruta el metodo que queramos ejecutar del controlador
-router.get('/', compradoresController.list);
+router.get('/', compradoresController.list)
+
+
+
+
 router.post('/add', compradoresController.add);
 //Recibimos por get (dar click al boton eliminar) una ruta llamda /delete que recibe un id
 router.get('/delete/:id', compradoresController.delete)
