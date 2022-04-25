@@ -1,7 +1,7 @@
 {
-  "name": "ABM-node.js",
+  "name": "abm-node",
   "version": "1.0.0",
-  "description": "",
+  "description": "Comandos que ejecute para iniciar el proyecto:\r // Para crear el package.json\r npm init --yes",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -18,8 +18,8 @@
   },
   "homepage": "https://github.com/TomasWettstein/ABM-node.js#readme",
   "dependencies": {
-    "ejs": "^3.1.6",
-    "express": "^4.17.2",
+    "ejs": "^3.1.7",
+    "express": "^4.17.3",
     "express-myconnection": "^1.0.4",
     "morgan": "^1.10.0",
     "mysql": "^2.18.1"
