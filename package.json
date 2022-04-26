@@ -2,7 +2,7 @@
   "name": "abm-node",
   "version": "1.0.0",
   "description": "Comandos que ejecute para iniciar el proyecto:\r // Para crear el package.json\r npm init --yes",
-  "main": "index.js",
+  "main": "src/app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

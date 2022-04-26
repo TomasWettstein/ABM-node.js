@@ -13,6 +13,7 @@ router.get('/', compradoresController.list)
 router.post('/add', compradoresController.add);
 //Recibimos por get (dar click al boton eliminar) una ruta llamda /delete que recibe un id
 router.get('/delete/:id', compradoresController.delete)
+router.post('/modificar/:id', compradoresController.update)
 
 //Luego lo exportamos
 module.exports = router;

@@ -40,5 +40,21 @@ controller.delete = (req, res) => {
 }
 
 
+controller.update = (req, res) => {
+    const id = req.params.id;
+    const nombre = req.body.nombre;    
+    const direccion = req.body.direccion;
+    const telefono = req.body.telefono;
+    req.getConnection((err, conn) => {
+        conn.query(`UPDATE compradores SET nombre = ?, direccion = ?, telefono = ?  WHERE id = ?`,[nombre, direccion, telefono, id], (err, modificado) => {
+            if(err){
+                res.json(err);
+            }
+            res.redirect('/');
+            })
+        })
+}
+
+
 //Exportamos el controlador
 module.exports = controller;

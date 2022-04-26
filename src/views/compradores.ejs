@@ -20,7 +20,7 @@
                                 <td><%= data[i].direccion %></td>
                                 <td><%= data[i].telefono %></td>
                                 <td>
-                                    <button class="btn btn-success rounded-pill botonInfo" id="botonEditar" data-nombre="<%= data[i].nombre %>" data-direccion = "<%= data[i].direccion %>" data-telefono = "<%= data[i].telefono %>" data-bs-toggle="modal" data-bs-target="#exampleModal">Editar</button>
+                                    <button class="btn btn-success rounded-pill botonInfo" id="botonEditar" data-id="<%= data[i].id %>" data-nombre="<%= data[i].nombre %>" data-direccion = "<%= data[i].direccion %>" data-telefono = "<%= data[i].telefono %>" data-bs-toggle="modal" data-bs-target="#exampleModal">Editar</button>
                                     <a href="/delete/<%= data[i].id %>"class="btn btn-danger rounded-pill">Eliminar</a>
                                 </td>
                             </tr>
